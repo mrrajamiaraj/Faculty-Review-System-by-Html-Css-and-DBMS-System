@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="login-form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Review System</title>
+    
+</head>
+<body>
+   <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+    <div class="sign">
+        <form onsubmit="return validatePassword()">
+        <label for="chk" aria-hidden="true">Sign Up</label>
+        <input type="text" name="txt" placeholder="User Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="Password" id="password" placeholder="Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <p id="message" style="color: red; display: none;">Passwords do not match</p>
+        <button>Sign Up</button>
+        </form>
+    </div>
+    <div class="login">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input type="email" name="email" placeholder="Email">
+        <input type="Password" name="password" placeholder="Password">
+        <button>Login</button>
+    </div>
+   </div>
+   <script>
+    function validatePassword() {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        const message = document.getElementById("message");
+
+        if (password !== confirmPassword) {
+            message.style.display = "block";
+            return false; // Prevent form submission
+        } else {
+            message.style.display = "none";
+            return true; // Allow form submission
+        }
+    }
+</script>
+
+</body>
+</html>
