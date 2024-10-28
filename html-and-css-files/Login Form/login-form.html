@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="login-form.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Review System</title>
+    <script src="login-form.js"></script>
     
 </head>
 <body>
@@ -29,21 +30,7 @@
         <button>Login</button>
     </div>
    </div>
-   <script>
-    function validatePassword() {
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
-        const message = document.getElementById("message");
 
-        if (password !== confirmPassword) {
-            message.style.display = "block";
-            return false; // Prevent form submission
-        } else {
-            message.style.display = "none";
-            return true; // Allow form submission
-        }
-    }
-</script>
 
 </body>
 </html>
