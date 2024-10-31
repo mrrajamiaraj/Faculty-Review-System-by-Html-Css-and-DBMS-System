@@ -168,8 +168,8 @@ body {
 .image-section {
     display: flex;                 
     justify-content: space-between;  
-    margin: 90px auto;              
-    max-width: 80vw;               
+    margin: 20px auto;              
+    max-width: 80%;               
 }
 
 .image-container {
@@ -192,9 +192,9 @@ body {
     color:rgb(1, 65, 55)          
 }
 
-.image-container:hover .rating-image,
-.image-container:hover .hidden-image,
-.image-container:hover .effective-image {
+.rating-image:hover,
+.hidden-image:hover,
+.effective-image:hover {
     transform: scale(1.1);  
 }
 .footer {
