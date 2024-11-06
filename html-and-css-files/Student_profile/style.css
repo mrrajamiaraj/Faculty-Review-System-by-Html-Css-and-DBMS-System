@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #a5d7e8 40%, #ffffff 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.prof {
+    background-color: pink;
+    width: 550px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pic img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid skyblue;
+}
+
+.pic img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.name {
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 15px;
+}
+
+.id, .dept {
+    font-size: 1rem;
+    color: black;
+    margin: 10px 0;
+}
+
+.reviewinfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.reviewinfo p {
+    margin: 0 10px; 
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 30px;
+    margin-left: 5px;
+}
+
+
+.btn {
+    background-color:rgb(210, 109, 75);
+    margin-left: 30px; 
+    height: 40px;
+    width: 150px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.btn:hover {
+    background-color: lightblue;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
