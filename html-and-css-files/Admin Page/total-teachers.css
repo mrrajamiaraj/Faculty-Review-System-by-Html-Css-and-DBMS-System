@@ -56,7 +56,7 @@ header {
 }
 
 
-.students-list {
+.faculty-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -66,7 +66,7 @@ header {
 }
 
 
-.student-box {
+.faculty-box {
     background: #e0f7fa; 
     border: 2px solid #0288d1;
     border-radius: 10px;
@@ -79,7 +79,7 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.student-box p {
+.faculty-box p {
     margin: 0;
     line-height: 1.5;
 }
@@ -90,7 +90,7 @@ header {
         max-width: 100%;
     }
 
-    .student-box {
+    .faculty-box {
         font-size: 14px;
     }
 
