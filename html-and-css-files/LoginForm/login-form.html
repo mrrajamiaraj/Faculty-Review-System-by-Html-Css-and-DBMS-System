@@ -2,35 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="login-form.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Review System</title>
-    <script src="login-form.js"></script>
-    
+    <title>Faculty Review System - Login</title>
+    <link rel="stylesheet" type="text/css" href="login-form.css">
+    <script src="login-form.js" defer></script>
 </head>
 <body>
-   <div class="main">
-    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="main">
+        <!-- Hidden Checkbox for Toggle -->
+        <input type="checkbox" id="chk" aria-hidden="true">
 
-    <div class="sign">
-        <form onsubmit="return validatePassword()">
-        <label for="chk" aria-hidden="true">Sign Up</label>
-        <input type="text" name="txt" placeholder="User Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="Password" id="password" placeholder="Password">
-        <input type="password" id="confirmPassword" placeholder="Confirm Password">
-        <p id="message" style="color: red; display: none;">Passwords do not match</p>
-        <button>Sign Up</button>
-        </form>
+        <!-- Sign Up Section -->
+        <div class="sign">
+            <form onsubmit="return validatePassword()">
+                <label for="chk" aria-hidden="true">Sign Up</label>
+                <input type="text" name="username" placeholder="User Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="id" placeholder="ID" required>
+                <input type="text" name="department" placeholder="Department" required>
+                <input type="url" name="fb_link" placeholder="Facebook Link" required>
+                <input type="text" name="cgpa" placeholder="CGPA" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <p id="message" style="color: red; display: none;">Passwords do not match</p>
+                <button>Sign Up</button>
+                <!-- Login Page Button -->
+                <button type="button" class="switch-button" onclick="toggleToLogin()">Go to Login</button>
+            </form>
+        </div>
+
+        <!-- Login Section -->
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button>Login</button>
+                <!-- Sign Up Page Button -->
+                <button type="button" class="switch-button" onclick="toggleToSignUp()">Go to Sign Up</button>
+            </form>
+        </div>
     </div>
-    <div class="login">
-        <label for="chk" aria-hidden="true">Login</label>
-        <input type="email" name="email" placeholder="Email">
-        <input type="Password" name="password" placeholder="Password">
-        <button>Login</button>
-    </div>
-   </div>
-
-
 </body>
 </html>
