@@ -14,7 +14,6 @@
         <!-- User Role Tabs -->
         <div class="tabs">
             <label class="tab-label" for="chk" onclick="showForm('student')">Student</label>
-            <label class="tab-label" for="chk" onclick="showForm('teacher')">Teacher</label>
             <label class="tab-label" for="chk" onclick="showForm('admin')">Admin</label>
         </div>
 
@@ -28,19 +27,6 @@
         <input type="password" id="studentConfirmPassword" placeholder="Confirm Password" required>
         <input type="text" name="institute" placeholder="Institute Name" required>
         <p id="studentMessage" style="display: none; color: red;">Passwords do not match</p>
-        <button type="submit">Signup</button>
-    </form>
-</div>
-
-<!-- Teacher Form -->
-<div id="teacher" class="form-content">
-    <form onsubmit="return validatePassword('teacherPassword', 'teacherConfirmPassword')">
-        <label for="chk" aria-hidden="true">Teacher Signup</label>
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" id="teacherPassword" name="password" placeholder="Password" required>
-        <input type="password" id="teacherConfirmPassword" placeholder="Confirm Password" required>
-        <p id="teacherMessage" style="display: none; color: red;">Passwords do not match</p>
         <button type="submit">Signup</button>
     </form>
 </div>
