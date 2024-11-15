@@ -1,0 +1,100 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0288d1, #b3e5fc); /* Blue Gradient */
+    color: #006064; /* Text Color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Header */
+header {
+    background-color: #0288d1; /* Ocean Blue */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Total Count Section */
+.total-count {
+    background: #b3e5fc; /* Light Blue */
+    border: 2px solid #0288d1;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #006064;
+    margin-bottom: 20px;
+}
+
+/* Students List Section */
+.students-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 500px; /* Limit the height */
+    overflow-y: auto; /* Add scrolling */
+    padding-right: 10px;
+}
+
+/* Individual Student Box */
+.student-box {
+    background: #e0f7fa; /* Light Cyan */
+    border: 2px solid #0288d1;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 16px;
+    color: #006064;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.student-box p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .student-box {
+        font-size: 14px;
+    }
+
+    .total-count {
+        font-size: 16px;
+    }
+}
