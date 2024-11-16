@@ -152,7 +152,7 @@ button {
 
 .rating-distribution {
     flex: 1;
-    min-width: 150px; /* Slightly smaller width */
+    min-width: 250px; /* Slightly smaller width */
     max-width: 400px; /* Prevent it from growing too large */
     background: #f9f9f9;
     padding: 15px; /* Reduced padding */
