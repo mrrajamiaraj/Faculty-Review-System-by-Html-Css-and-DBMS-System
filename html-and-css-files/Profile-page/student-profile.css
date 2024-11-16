@@ -18,15 +18,7 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.review-container {
-    width: 90%;
-    max-width: 800px;
-    background-color: #00bcd4;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 .show-reviews {
     width: 100%;
