@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty and Course Review</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rate.css">
 </head>
 <body>
 
@@ -38,7 +38,7 @@
     </select>
 
     <!-- Professor Rating Section -->
-    <label for="ratingBox">Rate Your Professor</label>
+    <label for="professorRating">Rate Your Professor</label>
     <div class="rating-box" id="professorRating">
         <div data-value="1" data-tooltip="Awful"></div>
         <div data-value="2" data-tooltip="OK"></div>
@@ -72,11 +72,11 @@
     <!-- Would You Take This Professor Again Question -->
     <label>Would you take this professor again?</label>
     <div class="radio-buttons">
-        <label for="yes">
-            <input type="radio" id="yes" name="takeAgain" value="Yes" required> Yes
+        <label>
+            <input type="radio" name="takeAgain" value="Yes" required> Yes
         </label>
-        <label for="no">
-            <input type="radio" id="no" name="takeAgain" value="No" required> No
+        <label>
+            <input type="radio" name="takeAgain" value="No" required> No
         </label>
     </div>
 
@@ -87,7 +87,7 @@
     <button type="submit">Submit Review</button>
 </div>
 
-<script src="script.js"></script>
+<script src="rate.js"></script>
 
 </body>
 </html>

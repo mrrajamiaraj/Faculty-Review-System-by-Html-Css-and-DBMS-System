@@ -67,24 +67,17 @@ select, .rating-box, textarea {
     color: #333;
     margin-top: 5px;
 }
-/* Radio Button Styling */
 .radio-buttons {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.radio-buttons input[type="radio"] {
-    margin-right: 10px;
-}
-
-/* Comment Section Styling */
 textarea {
     resize: vertical;
     height: 100px;
 }
 
-/* Button Styling */
 button {
     width: 100%;
     padding: 10px;

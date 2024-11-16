@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0288d1, #b3e5fc); /* Blue Gradient */
+    color: #006064; /* Text Color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full Height */
+    margin: 0;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    height: 90%; /* Takes 90% of viewport height */
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header */
+header {
+    background-color: #0288d1; /* Ocean Blue */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 200px; /* Larger size */
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #0288d1; /* Border */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    margin: 0 auto 20px;
+}
+
+/* Admin Info */
+.profile-info {
+    text-align: center;
+}
+
+.profile-info .admin-name,
+.profile-info .admin-id {
+    font-size: 20px; /* Larger text for visibility */
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Button Grid Section */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px; /* Space between buttons */
+    justify-items: center; /* Center-align buttons horizontally */
+}
+
+.button-grid a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+.button-grid button {
+    width: 150px; /* Fixed width for all buttons */
+    height: 40px; /* Fixed height for all buttons */
+    font-size: 16px; /* Ensure consistent font size */
+    background-color: #002cbe; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for hover effect */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.button-grid button:hover {
+    background-color: #3c14dc; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        height: auto; /* Allow height to adjust dynamically on smaller screens */
+        padding: 15px;
+    }
+
+    .button-grid button {
+        padding: 10px;
+        font-size: 14px; /* Reduce button text size for smaller screens */
+    }
+}
