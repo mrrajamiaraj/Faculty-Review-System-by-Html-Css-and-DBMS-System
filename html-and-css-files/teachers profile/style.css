@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background: linear-gradient(to bottom, #a5d7e8 40%, #ffffff 60%);
     color: #333;
 }
 
@@ -12,17 +12,24 @@ body {
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center; /* Centers the logo */
+    position: relative;
     color: #fff;
+    text-align: center;
 }
 
+
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
     margin-right: 20px;
 }
 
 .page-title {
+    position: absolute;
+    left: 20px; /* Adjust distance from the left edge */
+    top: 50%; /* Centers vertically */
+    transform: translateY(-50%); /* Ensures perfect vertical centering */
     font-size: 24px;
     margin: 0;
 }
@@ -31,7 +38,7 @@ body {
 .profile-container {
     max-width: 600px;
     margin: 20px auto;
-    background: #fff;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff6e65, #ff785b); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -50,6 +57,11 @@ body {
     border: 3px solid #ddd;
     object-fit: cover;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.profile-picture:hover{
+    transform: scale(1.1);
 }
 
 .teacher-name {
@@ -76,6 +88,8 @@ body {
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
 }
 
 .review {
@@ -88,4 +102,8 @@ body {
 
 .review strong {
     color: #2c3e50;
+}
+
+.review:hover{
+    background-color: #a5d7e8;
 }
