@@ -4,12 +4,14 @@ function setupRatingBox(ratingBox, tooltipId) {
     ratingBox.addEventListener('mouseover', function(event) {
         if (event.target.dataset.tooltip) {
             tooltip.innerText = event.target.dataset.tooltip;
-            tooltip.style.display = 'block';
+            tooltip.style.visibility = 'visible'; // Ensure it's visible
+            tooltip.style.opacity = '1'; // Make it fade in smoothly
         }
     });
 
     ratingBox.addEventListener('mouseout', function() {
-        tooltip.style.display = 'none';
+        tooltip.style.visibility = 'hidden'; // Hide it
+        tooltip.style.opacity = '0'; // Make it fade out smoothly
     });
 
     ratingBox.addEventListener('click', function(event) {

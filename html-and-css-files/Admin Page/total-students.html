@@ -4,40 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Database</title>
-    <link rel="stylesheet" href="total-students.css">
+    <link rel="stylesheet" href="total-students.css?v=1.0">
 </head>
 <body>
     <div class="container">
-        
         <header>
             <h1>Student Database</h1>
         </header>
 
-        
         <div class="total-count">
-            <p>Total Students: <span id="total-students">123</span></p>
+            <p>Total Students: <span id="total-students"></span></p>
         </div>
 
-        
-        <div class="students-list">
-            
-            <div class="student-box">
-                <p><strong>ID:</strong> 101</p>
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>University:</strong> XYZ University</p>
+        <form id="search-form" action="student-profile.php" method="GET">
+            <div class="search">
+                <input type="number" name="id" placeholder="Enter student ID to search" required>
+                <button type="submit">Search</button>
             </div>
-            <div class="student-box">
-                <p><strong>ID:</strong> 102</p>
-                <p><strong>Name:</strong> Jane Smith</p>
-                <p><strong>University:</strong> ABC University</p>
-            </div>
-            <div class="student-box">
-                <p><strong>ID:</strong> 103</p>
-                <p><strong>Name:</strong> Alice Brown</p>
-                <p><strong>University:</strong> DEF University</p>
-            </div>
-            
+        </form>
+
+        <div class="students-list" id="students-list">
+            <!-- Dynamically populated student list -->
         </div>
     </div>
+    <script src="total-students.js"></script>
 </body>
 </html>

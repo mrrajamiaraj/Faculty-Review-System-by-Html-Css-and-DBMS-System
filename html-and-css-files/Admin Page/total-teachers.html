@@ -3,41 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Database</title>
+    <title>Teacher Database</title>
     <link rel="stylesheet" href="total-teachers.css">
 </head>
 <body>
     <div class="container">
-        
         <header>
-            <h1>Faculty Database</h1>
+            <h1>Teacher Database</h1>
         </header>
 
-        
-        <div class="total-count">
-            <p>Total Faculty: <span id="total-faculty">123</span></p>
-        </div>
+        <form action="total-teachers.php" method="POST">
+            <div class="total-count">
+                <p>Total Teachers: <span id="total-teachers"></span></p>
+            </div>
+             
+            <div class="search">
+                <input type="number" id="teacher-id" name="id" placeholder="Enter teacher ID to search" required>
+                <button type="submit" class="submit">Search</button>
+            </div>
 
-        
-        <div class="faculty-list">
-            
-            <div class="faculty-box">
-                <p><strong>ID:</strong> 101</p>
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>University:</strong> XYZ University</p>
+            <div class="teachers-list" id="teachers-list">
+                <!-- Teacher data will be dynamically populated here -->
             </div>
-            <div class="faculty-box">
-                <p><strong>ID:</strong> 102</p>
-                <p><strong>Name:</strong> Jane Smith</p>
-                <p><strong>University:</strong> ABC University</p>
-            </div>
-            <div class="faculty-box">
-                <p><strong>ID:</strong> 103</p>
-                <p><strong>Name:</strong> Alice Brown</p>
-                <p><strong>University:</strong> DEF University</p>
-            </div>
-            
-        </div>
+        </form>
     </div>
+
+    <script src="total-teachers.js"></script>
 </body>
 </html>

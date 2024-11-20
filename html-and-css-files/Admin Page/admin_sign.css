@@ -1,0 +1,86 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center the login container on the screen */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #3f6f9e, #c8dceb); /* Faded two-tone background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the login form */
+.login-container {
+    background: linear-gradient(135deg, #afddca, #c8dceb);
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%;
+    max-width: 400px;
+    padding: 20px; /* Added padding for better spacing */
+    display: flex;
+    flex-direction: column; /* Stack input fields and button vertically */
+    justify-content: center; /* Center the contents vertically */
+    align-items: center; /* Center the contents horizontally */
+}
+
+/* Style for the form title */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure the heading is not cut off */
+}
+
+/* Input fields styling */
+.input-group {
+    width: 100%; /* Full width for input groups */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: center; /* Center label and input horizontally */
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    text-align: center; /* Center the label */
+}
+
+.input-group input {
+    width: 80%; /* Limit input width */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Style for the login button */
+.login-btn {
+    width: 50%; /* Set width for the button */
+    padding: 12px;
+    margin-left: 50px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}

@@ -33,6 +33,24 @@ body {
     font-size: 14px;
 }
 
+.right-section a {
+    display: inline-block;
+    width: 120px; /* Adjust width for text */
+    height: 40px; /* Icon size */
+    background-color: #007BFF; /* Icon background color */
+    color: white; /* Text color */
+    text-align: center;
+    line-height: 40px; /* Vertically center text */
+    border-radius: 20px; /* Rounded rectangle */
+    text-decoration: none; /* Removes underline */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease;
+}
+
+.right-section a:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
 
 .center-section {
     display: flex;

@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insert Data
         $query = "INSERT INTO students (id, name, email, department, cgpa, password) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("isssds", $id, $username, $email, $department, $cgpa, $password); // Skip hashing if needed
+        $stmt->bind_param("isssds", $id, $username, $email, $department, $cgpa, $password); 
 
         if ($stmt->execute()) {
             echo "<script>alert('Sign-Up Successful!'); window.location.href = 'login-form.html';</script>";
