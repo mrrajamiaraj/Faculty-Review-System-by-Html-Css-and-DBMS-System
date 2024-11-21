@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $department = $_POST['department'];
-        $cgpa = $_POST['cgpa'];
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirmPassword'];
 
@@ -28,38 +27,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Insert Data
-        $query = "INSERT INTO students (id, name, email, department, cgpa, password) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("isssds", $id, $username, $email, $department, $cgpa, $password); 
+        $query = "INSERT INTO students (id, name, email, department, password) VALUES ('$id','$username', '$email', '$department', '$password')";
 
-        if ($stmt->execute()) {
+        if ($conn->query($query)) {
             echo "<script>alert('Sign-Up Successful!'); window.location.href = 'login-form.html';</script>";
         } else {
             echo "<script>alert('Error: " . $stmt->error . "'); window.history.back();</script>";
         }
-
-        $stmt->close();
     }
 
     // Handle Login
     if (isset($_POST['login'])) {
-        $email = $_POST['email'];
+        $id = $_POST['id'];
         $password = $_POST['password'];
 
-        $query = "SELECT password FROM students WHERE email = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $stmt->bind_result($dbPassword);
-        $stmt->fetch();
+        $query = "SELECT password FROM students WHERE id = '$id'";
+        $result = $conn->query($query);
 
-        if ($dbPassword === $password) { // Check password directly if no hashing
-            echo "<script>alert('Login Successful!'); window.location.href = '/project/html-and-css-files/updated-profile-page/student-update.html';</script>";
-        } else {
-            echo "<script>alert('Invalid Email or Password'); window.history.back();</script>";
+        if($result->num_rows > 0)
+        {
+            $row = $result->fetch_assoc();
+
+            if ($row['password'] === $password) { // Check password directly if no hashing
+                echo "<script>alert('Login Successful!');</script>";
+                header("Location: /project/html-and-css-files/Updated-profile-page/student-update.php?id=$id");
+                exit();
+            } else {
+                echo "<script>alert('Invalid Password'); window.history.back();</script>";
+            }
+        }
+        else
+        {
+            echo "<script>alert('Invalid ID'); window.history.back();</script>";
         }
 
-        $stmt->close();
     }
 }
 

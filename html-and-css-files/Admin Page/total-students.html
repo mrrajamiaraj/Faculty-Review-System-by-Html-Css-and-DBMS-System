@@ -7,26 +7,11 @@
     <link rel="stylesheet" href="total-students.css?v=1.0">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Student Database</h1>
-        </header>
-
-        <div class="total-count">
-            <p>Total Students: <span id="total-students"></span></p>
-        </div>
-
-        <form id="search-form" action="student-profile.php" method="GET">
-            <div class="search">
-                <input type="number" name="id" placeholder="Enter student ID to search" required>
-                <button type="submit">Search</button>
-            </div>
+    <div class="search">
+        <form action = "s_profile.php" method = "POST" >
+               <input type="number" id="s_id" name="s_id" placeholder="Enter Student ID" required>
+               <button type="submit" class="button">Search</button>
         </form>
-
-        <div class="students-list" id="students-list">
-            <!-- Dynamically populated student list -->
         </div>
-    </div>
-    <script src="total-students.js"></script>
 </body>
 </html>

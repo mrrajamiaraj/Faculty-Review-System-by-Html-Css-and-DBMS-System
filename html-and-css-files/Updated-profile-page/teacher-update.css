@@ -28,13 +28,13 @@ body {
 
 .professor-profile h2 {
     font-size: 1.5rem;
-    color: #333;
+    color: white;
     margin-bottom: 5px;
 }
 
 .professor-profile p {
     font-size: 1rem;
-    color: #666;
+    color: white;
     margin-bottom: 5px;
 }
 
@@ -55,6 +55,8 @@ body {
     max-width: 1200px;
     margin: auto;
     background: #fff;
+    display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -133,6 +135,9 @@ button {
 .rate-button {
     background-color: #007bff;
     color: #fff;
+    width: 150px;
+    height:40px;
+    right: 30px;
 }
 
 .rate-button:hover {
@@ -190,7 +195,7 @@ button {
     border-radius: 5px;
 }
 
-.tags {
+/* .tags {
     margin-bottom: 30px;
 }
 
@@ -238,27 +243,57 @@ button {
     font-weight: bold;
     color: #007bff;
     margin-bottom: 5px;
-}
+} */
 /* Show All Reviews Button */
-.reviews-section {
+/* .reviews-section {
     text-align: center;
     margin-top: 30px;
+    gap: 50px;
+} */
+
+
+/* Style specific to the reviews-section */
+/* Style the reviews-section */
+.reviews-section {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: flex-end; /* Align to the right */
+    gap: 30px; /* Increase the gap between buttons */
+    margin-left: auto; /* Push to the far right */
 }
 
-.show-reviews-button {
-    padding: 10px 20px;
-    font-size: 1rem;
+/* Style for both buttons */
+.show-reviews-button, .rate-button {
+    background-color: #673ab7;
+    width: 200px; /* Increase width */
+    height: 60px; /* Increase height */
+    font-size: 18px; /* Make text larger */
     font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
+    padding: 15px 25px; /* Default size */
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.3s ease;
 }
 
-.show-reviews-button:hover {
-    background-color: #0056b3;
+/* Hover effect */
+.show-reviews-button:hover, .rate-button:hover {
+    background-color: #311b92;
+}
+
+/* Specific styling for the 'Give review' button */
+.rate-button {
+    width: 200px; /* Increase width */
+    height: 60px; /* Increase height */
+    font-size: 18px; /* Make text larger */
+    font-weight: bold; /* Optional for better emphasis */
+}
+
+/* Optional: Clean up anchor-wrapped buttons */
+.reviews-section a {
+    text-decoration: none;
 }
 
 
