@@ -211,7 +211,7 @@ button:hover {
             <form action="login.php" method="POST">
                 <input type="hidden" name="login" value="1">
                 <label for="chk" aria-hidden="true">Login</label>
-                <input type="id" name="id" placeholder="ID" required>
+                <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit">Login</button>
                 <!-- Sign Up Page Button -->
