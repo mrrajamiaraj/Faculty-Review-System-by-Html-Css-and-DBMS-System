@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "INSERT INTO students (id, name, email, department, password, type, university_name) VALUES ('$id','$username', '$email', '$department', '$password', '$type', '$versity')";
 
         if ($conn->query($query)) {
-            echo "<script>alert('Sign-Up Successful!'); window.location.href = 'login-form.html';</script>";
+            echo "<script>alert('Sign-Up Successful!'); window.location.href = 'login-form.php';</script>";
         } else {
             echo "<script>alert('Error: " . $stmt->error . "'); window.history.back();</script>";
         }

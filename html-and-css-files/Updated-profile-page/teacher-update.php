@@ -327,6 +327,7 @@ if (isset($_POST['st_id']))
                 <h1><?php echo htmlspecialchars($row2['g_rating']) ?> <span>/ 5</span></h1>
                 <p>Rate grading Based on <span><?php echo htmlspecialchars($row2['total_rate']) ?></span>Ratings </p>
                 </div>
+                <input type = "hidden">
                 
             </div>
             
@@ -719,4 +720,59 @@ else{
  <?php
 }
 ?>
+<!-- document.getElementById('submitBtn').addEventListener('click', function () {
+                          const value = document.getElementById('textField').value;
+                          alert('You entered: '' + value);
+                          echo "
+                      <!DOCTYPE html>
+                      <html lang='en'>
+                      <head>
+                          <meta charset='UTF-8'>
+                          <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                          <title>Dynamic Text Field</title>
+                          <style>
+                          .hidden {
+                              display: none;
+                            }
+                          .container {
+                              text-align: center;
+                              margin-top: 50px;
+                            }
+                          button {
+                              padding: 10px 20px;
+                              font-size: 16px;
+                              cursor: pointer;
+                            }
+                          .text-field {
+                              margin-top: 10px;
+                           }
+                          </style>
+                        </head>
+                        <body>
+                         <div class='container'>
+                         <button id='addFieldBtn'>Add Text Field</button>
+                         <div id='dynamicField' class='hidden'>
+                         <form action = 'report-submit.php' method = 'POST'>
+                         <input type='hidden' name='r_id' class='hidden value' value='<?php echo $row3['id']; ?>'>
+                         <label for='versity' class='dropdown-label'>Select University</label>
+                         <select name='versity' id='versity'>
+                         <option value='False Review'>False Review</option>
+                         <option value='Not Authenic'>Not Authenic</option>
+                         <option value='Others'>Others</option>
+                         </select>
+                         </form>
+                          </div>
+                         </div>
 
+                        <script>
+                          document.getElementById('addFieldBtn').addEventListener('click', function () {
+                         // Show the dynamic field and submit button
+                          document.getElementById('dynamicField').classList.remove('hidden');
+                         });
+
+                         
+                       </script>
+                       </body>
+                       </html>
+                       ";
+                         }); -->

@@ -150,7 +150,7 @@ if (isset($_GET['id'])) {
     <div class="review-container">
             <div class="header">
                 <h2 class="header-text">Student Information</h2>
-                <button class="update-button">Update</button>
+                <?php echo "<button class='update-button' onclick=\"window.location.href='/project/html-and-css-files/Student-information-up-form/student-information.php?id=$id'\">Update</button>"; ?>
             </div>
             <div class="user-info">
                 <span><?php echo htmlspecialchars($row['university_name']); ?></span>
@@ -344,7 +344,7 @@ else if(isset($_POST['s_id']))
  <div class="review-container">
         <div class="header">
             <h2 class="header-text">Student Information</h2>
-            <button class="update-button">Update</button>
+            
         
         </div>
         <div class="user-info">

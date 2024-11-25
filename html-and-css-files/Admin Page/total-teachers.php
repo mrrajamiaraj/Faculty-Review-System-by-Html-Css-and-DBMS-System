@@ -298,7 +298,7 @@ else{
             <h3><?php echo htmlspecialchars($uni); ?></h3>
         </header>
 
-        <form action = "t_profile.php" method = "POST">
+        <form action = "/project/html-and-css-files/updated-profile-page/teacher-update.php" method = "POST">
             <div class="total-count">
                 <p>Total Teachers:<?php echo htmlspecialchars($total_teachers); ?> </p>
             </div>

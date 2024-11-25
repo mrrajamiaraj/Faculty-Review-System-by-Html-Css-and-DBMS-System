@@ -8,32 +8,62 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
-        <header>
-            <h1>Admin Dashboard</h1>
-        </header>
-
         <!-- Profile Section -->
-        <div class="profile-section">
-            <!-- Admin Picture -->
-            <img src="admin.png" alt="Admin Picture" class="profile-pic">
-            <!-- Admin Details -->
-            <div class="profile-info">
-                <p class="admin-name"><strong>Name:</strong> Nsu It</p>
-                <p class="admin-id"><strong>Admin ID:</strong> 2233</p>
+        <div class="profile-container">
+            <div class="profile-section">
+                <!-- Admin Picture -->
+                <img src="admin.png" alt="Admin Picture" class="profile-pic">
+                <!-- Admin Details -->
+                <div class="profile-info">
+                    <p class="admin-name"><strong>Name:</strong> Admin</p>
+                    <p class="admin-id"><strong>Admin ID:</strong> 2233</p>
+                </div>
             </div>
         </div>
 
-        <!-- Button Grid Section -->
-        <div class="button-grid">
-           <a href="student-uni.php"><button>Total Students</button></a> 
-           <a href=""><button>Delete Student</button></a>
-            <a href="teacher-uni.php"><button>Total Faculty</button></a>
-            <a href=""><button>Delete Faculty</button></a>
-            <a href=""><button>Add Faculty</button></a>
-            <a href="complain-delete.html"><button>Delete Review</button></a>
-            <a href="complain.html"><button>Reports</button></a>
-            <a href=""><button>Update Review</button></a>
+        <!-- Buttons Section -->
+        <div class="buttons-container">
+            <header>
+                <h1>Admin Dashboard</h1>
+            </header>
+
+            <!-- Button Grid Section -->
+            <div class="button-grid">
+                <!-- Student Management Buttons -->
+                <div class="management-part">
+                    <h3>Student Management</h3>
+                    <a href="student-uni.php"><button>Total Students</button></a> 
+                    <a href="delete-student.php"><button>Delete Student</button></a>
+                </div>
+
+                <!-- Faculty Management Buttons -->
+                <div class="management-part">
+                    <h3>Faculty Management</h3>
+                    <a href="teacher-uni.php"><button>Total Faculty</button></a>
+                    <a href=""><button>Delete Faculty</button></a>
+                    <a href=""><button>Add Faculty</button></a>
+                </div>
+
+                <!-- Reviews Management Buttons -->
+                <div class="management-part">
+                    <h3>Reviews</h3>
+                    <a href="complain-delete.html"><button>Delete Review</button></a>
+                    <a href="complain.html"><button>Reports</button></a>
+                    <a href=""><button>Update Review</button></a>
+                </div>
+
+                <!-- Complaints Management Buttons -->
+                <div class="management-part">
+                    <h3>Complaints</h3>
+                    <a href=""><button>Show Complains</button></a>
+                </div>
+
+                <!-- University Management Buttons -->
+                <div class="management-part">
+                    <h3>University Management</h3>
+                    <a href=""><button>Add University</button></a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
