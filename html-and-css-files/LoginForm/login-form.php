@@ -77,7 +77,7 @@ body {
 }
 
 .login {
-    background: #eee;
+    background: url("1.jpg") no-repeat center / cover;/* Change this to your desired color */
     transform: translateY(100%);
     z-index: 1;
 }
@@ -112,13 +112,14 @@ label {
 
 input,
 select {
-    width: 80%;
-    height: 40px;
+    width: 250px; /* Adjusted from 80% for wider inputs */
+    height: 40px; /* Increased height */
     background: #e0dede;
     justify-content: center;
     display: flex;
     margin: 10px auto;
-    padding: 10px;
+    padding: 12px; /* Slightly increased padding */
+    font-size: 1.1em; /* Increased font size */
     border: none;
     outline: none;
     border-radius: 5px;
