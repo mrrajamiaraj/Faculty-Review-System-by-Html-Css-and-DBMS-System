@@ -154,15 +154,15 @@ header {
              
             <div class="search">
             <label for="versity" class="dropdown-label">Select University</label>
-                <select name="versity" id="versity">
-                    <option value=""></option>
-                    <?php
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<option value=\"" . htmlspecialchars($row['name']) . "\">" . htmlspecialchars($row['name']) . "</option>";
-                        }
-                    }
-                    ?>
+                <select name="versity" id="versity" required>
+                <option value="">-- Select an option --</option> <!-- Default placeholder -->
+                <?php
+                  if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                  echo "<option value=\"" . htmlspecialchars($row['name']) . "\">" . htmlspecialchars($row['name']) . "</option>";
+                  }
+                 }
+                ?>
                 </select>
                 <button type="submit" class="submit">Search</button>
             </div>

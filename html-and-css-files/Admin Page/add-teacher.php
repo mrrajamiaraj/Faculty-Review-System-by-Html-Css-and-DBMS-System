@@ -52,12 +52,8 @@ body {
     position: relative;
 }
 
-#chk {
-    display: none;
-}
 
-.sign,
-.login {
+.sign {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -76,21 +72,7 @@ body {
     transform: rotateY(0);
 }
 
-.login {
-    background: #eee;
-    transform: translateY(100%);
-    z-index: 1;
-}
 
-#chk:checked ~ .login {
-    transform: translateY(0);
-    z-index: 2;
-}
-
-#chk:checked ~ .sign {
-    transform: translateY(-100%);
-    z-index: 1;
-}
 
 label {
     color: #fff;
@@ -155,33 +137,16 @@ button:hover {
     font-family: Arial, sans-serif;
 }
 
-.switch-button {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #573b8a;
-    margin-top: 10px;
-    transition: 0.2s ease-in-out;
-}
-
-.switch-button:hover {
-    background: #573b8a;
-    color: #fff;
-}
-
 
 
 </style>
 <body>
     <div class="main">
-        <!-- Hidden Checkbox for Toggle--> 
-        <input type="checkbox" id="chk" aria-hidden="true">
 
         <!-- Sign Up Section -->
         <div class="sign">
-            <form action="login.php" method="POST">
-                <input type="hidden" name="signup" value="1">
-                <label for="chk" aria-hidden="true">Sign Up</label>
-                <input type="text" name="username" placeholder="Name" required>
+            <form action="add.php" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
                 <!-- Course Selection Dropdown -->
                 <label for="versity" class="dropdown-label">Select University</label>
                 <select name="versity" id="versity" required>
@@ -192,30 +157,13 @@ button:hover {
                   echo "<option value=\"" . htmlspecialchars($row['name']) . "\">" . htmlspecialchars($row['name']) . "</option>";
                   }
                  }
+                 $conn->close();
                 ?>
                 </select>
-                <input type="email" name="email" placeholder="Email" required>
                 <input type="text" name="id" placeholder="ID" required>
-                <input type="text" name="department" placeholder="Department" required>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
-                <p id="message" style="color: red; display: none;">Passwords do not match</p>
-                <button type="submit">Sign Up</button>
-                <!-- Login Page Button -->
-                <button type="button" class="switch-button" onclick="toggleToLogin()">Go to Login</button>
-            </form>
-        </div>
-
-        <!-- Login Section -->
-        <div class="login">
-            <form action="login.php" method="POST">
-                <input type="hidden" name="login" value="1">
-                <label for="chk" aria-hidden="true">Login</label>
-                <input type="id" name="id" placeholder="ID" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-                <!-- Sign Up Page Button -->
-                <button type="button" class="switch-button" onclick="toggleToSignUp()">Go to Sign Up</button>
+                <input type="text" name="dept" placeholder="Department" required>
+                <input type="text" name="initial" placeholder="Initial" required>
+                <button type="submit">Add</button>
             </form>
         </div>
     </div>
