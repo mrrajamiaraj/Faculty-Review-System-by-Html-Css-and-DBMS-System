@@ -73,32 +73,6 @@ $result2 = $conn->query($sql2);
     </div>
     <button type="submit" class="submit-button">Submit Update Request</button>
 </form>
-
-
-        <!-- <form action="form-update.php" method="POST">
-            <h3>Select Information to Update</h3>
-
-            <div class="update-options">
-            <input type="hidden" name="s_id" value="<?php echo htmlspecialchars($s_id); ?>">
-                <div>
-                    <label><input type="checkbox" name="updateField" value="username" onchange="toggleCommentBox('username-comment')"> User Name</label>
-                    <textarea id="username-comment" class="comment-box" name = "name" placeholder="Enter updated User Name"></textarea>
-                </div>
-                <div>
-                    <label><input type="checkbox" name="updateField" value="email" onchange="toggleCommentBox('email-comment')"> Email</label>
-                    <textarea id="email-comment" class="comment-box" name = "email" placeholder="Enter updated Email"></textarea>
-                </div>
-                <div>
-                    <label><input type="checkbox" name="updateField" value="department" onchange="toggleCommentBox('department-comment')"> Department</label>
-                    <textarea id="department-comment" class="comment-box" name = "department" placeholder="Enter updated Department"></textarea>
-                </div>
-                <div>
-                    <label><input type="checkbox" name="updateField" value="password" onchange="toggleCommentBox('password-comment')"> Password</label>
-                    <textarea id="password-comment" class="comment-box" name = "password" placeholder="Enter updated Password..."></textarea>
-                </div>
-            </div>
-            <button type="submit" class="submit-button">Submit Update Request</button>
-        </form> -->
     </div>
     <script src="information-update.js"></script>
 </body>

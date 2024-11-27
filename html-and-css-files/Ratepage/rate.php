@@ -25,121 +25,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty and Course Review</title>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f9;
-}
-
-.review-container {
-    width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    color: #333;
-}
-
-label {
-    margin: 10px 0 5px;
-    display: block;
-    color: #555;
-}
-
-select, .rating-box, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.rating-box {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 5px;
-    position: relative;
-}
-
-.rating-box div {
-    width: 18%;
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: background-color 0.3s, border-color 0.3s;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9em;
-    color: #666;
-}
-
-/* Tooltip styling */
-.tooltip {
-    visibility: hidden; /* Initially hidden */
-    opacity: 0; /* Transparent */
-    text-align: center;
-    padding: 5px;
-    font-size: 0.9em;
-    color: #333;
-    margin-top: 5px;
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-}
-
-
-.radio-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-textarea {
-    resize: vertical;
-    height: 100px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Hover colors */
-.rating-box div[data-value="1"]:hover { background-color: #cd9595; color: #fff; }
-.rating-box div[data-value="2"]:hover { background-color: #b4c3ee; color: #fff; }
-.rating-box div[data-value="3"]:hover { background-color: #dbce99; color: #333; }
-.rating-box div[data-value="4"]:hover { background-color: #a6e6a1; color: #333; }
-.rating-box div[data-value="5"]:hover { background-color: #b39ce5; color: #fff; }
-
-/* Selected state colors */
-.red.selected { background-color: #ef2b2b; color: #fff; }
-.blue.selected { background-color: #3c68eb; color: #fff; }
-.yellow.selected { background-color: #ffde58; color: #333; }
-.lightgreen.selected { background-color: #1ba911; color: #333; }
-.green.selected { background-color: #6a38ba; color: #fff; }
-
-    </style>
+    <link rel="stylesheet" href="rate.css">
 </head>
 <body>
 
@@ -149,7 +35,7 @@ button:hover {
 <form method="POST" action="submit-review.php">
         <!-- Course Selection Dropdown -->
         <label for="course">Select Course</label>
-        <select name="course" id="course">
+        <select name="course" id="course" required>
             <option value=""></option>
             <?php
             if ($result->num_rows > 0) {
