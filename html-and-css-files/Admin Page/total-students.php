@@ -42,7 +42,7 @@ if($uni === "North South")
             <h3><?php echo htmlspecialchars($uni); ?></h3>
         </header>
         
-        <form action = "/project/html-and-css-files/updated-profile-page/student-update.php?" method = "POST">
+        <form action = "/project/html-and-css-files/updated-profile-page/student-update.php?student_id=10003" method = "POST">
             <div class="total-count">
                 <p>Total Students:<?php echo htmlspecialchars($total_students); ?> </p>
             </div>
@@ -54,20 +54,24 @@ if($uni === "North South")
         
 
             <div class="teachers-list" id="teachers-list">
-                <?php
-                 if ($result_teachers->num_rows > 0) {
-                      while ($row = $result_teachers->fetch_assoc()) {
+            <?php
+             if ($result_teachers->num_rows > 0) {
+                  while ($row = $result_teachers->fetch_assoc()) {
+                      echo "<a href='/project/html-and-css-files/updated-profile-page/student-update.php?student_id=10003&s_id=" . htmlspecialchars($row['id']) . "' style='text-decoration: none; color: inherit;'>";
+                      echo "<div class='comment' style='cursor: pointer;'>
+                            <strong>Student ID:</strong> " . htmlspecialchars($row['id']) . "<br>
+                            <strong>Student Name:</strong> " . htmlspecialchars($row['name']) . "<br>
+                            <strong>Department:</strong> " . htmlspecialchars($row['department']) . "
+                          </div>";
+                      echo "</a>";
+                    }
+               } else {
+                      echo "<p class='comment'>No Student found for this Database.</p>";
+                    }
 
-                          echo "<div class='comment'><strong>Student ID:</strong> " . htmlspecialchars($row['id']) . "<br>";
-                          echo "<strong>Student Name:</strong> " . htmlspecialchars($row['name']) . "<br>";
-                          echo "<strong>Department:</strong> " . htmlspecialchars($row['department']) . "</div>";
-                        }
-                    } else {
-                         echo "<pc class = 'comment'> No Student found for this Database.</p>";
-                        }
 
-                 $conn->close();
-                ?>
+                $conn->close();
+            ?>
             </div>
         </form>
     </div>
@@ -104,7 +108,7 @@ else
             <h3><?php echo htmlspecialchars($uni); ?></h3>
         </header>
         
-        <form action = "/project/html-and-css-files/updated-profile-page/student-update.php" method = "POST">
+        <form action = "/project/html-and-css-files/updated-profile-page/student-update.php?student_id=10003" method = "POST">
             <div class="total-count">
                 <p>Total Students:<?php echo htmlspecialchars($total_students); ?> </p>
             </div>
@@ -116,20 +120,25 @@ else
         
 
             <div class="teachers-list" id="teachers-list">
-                <?php
-                 if ($result_teachers->num_rows > 0) {
-                      while ($row = $result_teachers->fetch_assoc()) {
+            <?php
+             if ($result_teachers->num_rows > 0) {
+                  while ($row = $result_teachers->fetch_assoc()) {
+                      echo "<a href='/project/html-and-css-files/updated-profile-page/student-update.php?student_id=10003&s_id=" . htmlspecialchars($row['id']) . "' style='text-decoration: none; color: inherit;'>";
+                      echo "<div class='comment' style='cursor: pointer;'>
+                            <strong>Student ID:</strong> " . htmlspecialchars($row['id']) . "<br>
+                            <strong>Student Name:</strong> " . htmlspecialchars($row['name']) . "<br>
+                            <strong>Department:</strong> " . htmlspecialchars($row['department']) . "
+                          </div>";
+                      echo "</a>";
+                    }
+               } else {
+                      echo "<p class='comment'>No Student found for this Database.</p>";
+                    }
 
-                          echo "<div class='comment'><strong>Student ID:</strong> " . htmlspecialchars($row['id']) . "<br>";
-                          echo "<strong>Student Name:</strong> " . htmlspecialchars($row['name']) . "<br>";
-                          echo "<strong>Department:</strong> " . htmlspecialchars($row['department']) . "</div>";
-                        }
-                    } else {
-                         echo "<pc class = 'comment'> No Student found for this Database.</p>";
-                        }
 
-                 $conn->close();
-                ?>
+                $conn->close();
+            ?>
+
             </div>
         </form>
     </div>

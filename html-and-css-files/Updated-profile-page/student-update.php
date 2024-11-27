@@ -35,6 +35,24 @@ if (isset($_GET['id'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="student-update.css">
+        <style>
+             .home{
+    width: 40%;
+    padding: 10px;
+    margin-top: 20px;
+    right: 50%;
+    background-color: #0251d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+ }
+ .home:hover{
+    background-color: #026798;
+ }
+ 
+ </style>
     </head>
     <body>
     <div class="review-container">
@@ -56,6 +74,7 @@ if (isset($_GET['id'])) {
                 <?php echo "<button class='review-button' onclick=\"window.location.href='/project/html-and-css-files/admin%20Page/total-teachers.php?id=$id'\">Give Review</button>"; ?>
             </div>
             <button class="show-reviews" onclick="showReviews()" >Show All Reviews</button>
+            <button class="home" onclick="window.location.href='/project/html-and-css-files/website font page/font-page.html'" >Log Out</button>
         </div>
     
         <div id ="review-section" class="reviews" style="display: none;">
@@ -87,9 +106,18 @@ if (isset($_GET['id'])) {
     </html>
     <?php
  }
-else if(isset($_POST['s_id']))
+else if(isset($_GET['student_id']))
 {
-    $id = $_POST['s_id'];
+    $id = 0;
+
+    if(isset($_GET['s_id']))
+    {
+        $id = $_GET['s_id'];
+    }
+    if(isset($_POST['s_id']))
+    {
+        $id = $_POST['s_id'];
+    }
 
   $sql = "SELECT * from students where id = '$id'";
   $result = $conn->query($sql);
@@ -139,6 +167,7 @@ else if(isset($_POST['s_id']))
             <p><strong>Reviews Given:</strong> <?php echo htmlspecialchars($row2['total_review']); ?></p>
         </div>
         <button class="show-reviews" onclick="showReviews()" >Show All Reviews</button>
+        <button class="back" onclick="window.location.href='/project/html-and-css-files/admin Page/admin-page.html'" >Back to Admin</button>
     </div>
 
     <div id ="review-section" class="reviews" style="display: none;">
