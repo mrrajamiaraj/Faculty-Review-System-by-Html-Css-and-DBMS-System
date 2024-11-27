@@ -1,0 +1,257 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); /* Theme background */
+   color: #333;
+   padding: 20px;
+}
+
+.professor-profile {
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.profile-picture {
+   width: 120px;
+   height: 120px;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: 15px;
+   border: 2px solid #007bff;
+}
+
+.professor-profile h2 {
+   font-size: 1.5rem;
+   color: white;
+   margin-bottom: 5px;
+}
+
+.professor-profile p {
+   font-size: 1rem;
+   color: white;
+   margin-bottom: 5px;
+}
+
+.container {
+   max-width: 1200px;
+   margin: auto;
+   background: #fff;
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rating-overview {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin-bottom: 30px;
+}
+
+.rating-score {
+   flex: 1;
+   min-width: 300px;
+}
+
+.rating-score h1 {
+   font-size: 4rem;
+   margin-bottom: 10px;
+   color: #000;
+}
+
+.rating-score span {
+   font-size: 1.5rem;
+   color: #666;
+}
+
+.rating-score h2 {
+   font-size: 2rem;
+   margin: 10px 0;
+   color: #333;
+}
+
+.rating-score a {
+   color: #0066cc;
+   text-decoration: none;
+}
+
+.rating-score a:hover {
+   text-decoration: underline;
+}
+
+.rating-details {
+   display: flex;
+   justify-content: space-around;
+   margin: 20px 0;
+}
+
+.detail h3 {
+   font-size: 2rem;
+   margin-bottom: 5px;
+   color: #000;
+}
+
+.detail p {
+   font-size: 0.9rem;
+   color: #666;
+}
+
+.actions {
+   display: flex;
+   gap: 10px;
+   margin-top: 20px;
+}
+
+button {
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-weight: bold;
+}
+
+.rate-button {
+   background-color: #007bff;
+   color: #fff;
+   width: 150px;
+   height: 40px;
+}
+
+.rate-button:hover {
+   background-color: #0056b3;
+}
+
+.compare-button {
+   background-color: transparent;
+   color: #007bff;
+   border: 2px solid #007bff;
+}
+
+.compare-button:hover {
+   background-color: #007bff;
+   color: #fff;
+}
+
+.reviews-section {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   margin-top: 40px;
+}
+
+.show-reviews-button, .rate-button,.report-button {
+   background-color: #673ab7;
+   color: white;
+   padding: 15px 25px;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 18px;
+   transition: background-color 0.3s ease;
+   width: 200px;
+   height: 60px;
+}
+
+.show-reviews-button:hover, .rate-button:hover,.report-button {
+   background-color: #311b92;
+}
+
+/* Container for action buttons (Show Reviews and Rate) */
+.action-buttons {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   margin-top: 40px;
+   position: relative;
+}
+
+/* Reviews Section */
+.reviews {
+   margin-top: 30px;
+}
+
+#review-section2 {
+   display: none; /* Initially hidden */
+}
+
+.review-box {
+   background-color: #fff;
+   padding: 20px;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   margin-bottom: 20px;
+   color: #333;
+   font-size: 14px;
+}
+
+.review-box strong {
+   font-weight: bold;
+}
+
+/* Centering review boxes */
+.reviews-section {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+/* Ensure reviews section is below the buttons */
+.reviews-section h3 {
+   margin-bottom: 15px;
+}
+
+.container {
+   margin-bottom: 60px; /* Adds bottom space for buttons to sit comfortably */
+}
+/* Style for the Report Button */
+.report-button {
+   background-color: #f44336; /* Red color */
+   color: white;
+   padding: 8px 16px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 14px;
+   margin-top: 10px; /* Space above the button */
+   transition: background-color 0.3s ease;
+}
+
+.report-button:hover {
+   background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Optional: Increase the space between reviews */
+.review-box {
+   background-color: #fff;
+   padding: 20px;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   margin-bottom: 20px;
+   color: #333;
+   font-size: 14px;
+}
+
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+   .rating-overview {
+       flex-direction: column;
+   }
+
+   .rating-score, .rating-distribution {
+       margin-bottom: 20px;
+   }
+
+   .action-buttons {
+       flex-direction: column;
+       gap: 10px;
+   }
+}

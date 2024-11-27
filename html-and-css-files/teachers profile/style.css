@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #a5d7e8 40%, #ffffff 60%);
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the logo */
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+
+.logo {
+    width: 150px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.page-title {
+    position: absolute;
+    left: 20px; /* Adjust distance from the left edge */
+    top: 50%; /* Centers vertically */
+    transform: translateY(-50%); /* Ensures perfect vertical centering */
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff6e65, #ff785b); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.profile-picture:hover{
+    transform: scale(1.1);
+}
+
+.teacher-name {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.teacher-dept,
+.teacher-courses {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Reviews Section */
+.reviews-section {
+    margin-top: 20px;
+}
+
+.reviews-section h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.review {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.review strong {
+    color: #2c3e50;
+}
+
+.review:hover{
+    background-color: #a5d7e8;
+}
