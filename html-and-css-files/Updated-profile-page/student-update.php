@@ -87,9 +87,18 @@ if (isset($_GET['id'])) {
     </html>
     <?php
  }
-else if(isset($_POST['s_id']))
+else if(isset($_GET['student_id']))
 {
-    $id = $_POST['s_id'];
+    $id = 0;
+
+    if(isset($_GET['s_id']))
+    {
+        $id = $_GET['s_id'];
+    }
+    if(isset($_POST['s_id']))
+    {
+        $id = $_POST['s_id'];
+    }
 
   $sql = "SELECT * from students where id = '$id'";
   $result = $conn->query($sql);
