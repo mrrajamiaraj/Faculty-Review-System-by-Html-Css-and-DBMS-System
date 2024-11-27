@@ -1,1 +1,0 @@
-# Somik-s-portfolio
