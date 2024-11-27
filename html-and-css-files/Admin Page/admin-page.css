@@ -30,12 +30,41 @@ body {
 
 /* Profile Container */
 .profile-container {
-    width: 30%; /* 30% width for the profile container */
+    display: flex;
+    flex-direction: column; /* Align children vertically */
+    justify-content: space-between; /* Space out content to push the button down */
+    width: 30%; /* Keep the container's width consistent */
+    min-height: 400px; /* Add a minimum height to maintain the visual size */
     background-color: white;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+
+.home-button {
+    margin-top: auto; /* Push the button to the bottom */
+}
+
+.home-button a {
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.home-button button {
+    width: 80%; /* Adjusts the button width */
+    height: 40px;
+    font-size: 16px;
+    background-color: #d32f2f; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-button button:hover {
+    background-color: #f44336; /* Lighter red on hover */
 }
 
 .profile-pic {
