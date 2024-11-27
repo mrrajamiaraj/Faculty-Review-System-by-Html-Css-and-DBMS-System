@@ -29,7 +29,7 @@ $sql = "INSERT INTO reviews (s_id, t_id, course_name, rate_grading, rate_learnin
 
 // Execute the query
 if ($conn->query($sql) === TRUE) {
-    echo "<script>alert('Review submitted successfully!');  window.location.href='/project/html-and-css-files/Ratepage/rate.php?tc_id=$tc_id&st_id=$st_id'; </script>";
+    echo "<script>alert('Review submitted successfully!');  window.location.href='/project/html-and-css-files/updated-profile-page/teacher-update.php?student_id=10003&t_id=$tc_id&st_id=$st_id'; </script>";
 } else {
     echo "<script>alert('Error: " . $sql . "<br>" . $conn->error . "');</script>";
 }
