@@ -8,6 +8,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Faculty-Review-System-by-Html-Css-and-DBMS-System"
+		"liveServer.settings.multiRootWorkspaceName": "project",
+		"liveServer.settings.port": 5501
 	}
 }
