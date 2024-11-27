@@ -10,10 +10,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * from university";
+$sql = "SELECT distinct university_name from teacher";
 $result = $conn->query($sql);
 
-$sql2 = "SELECT count(*) as total_uni from university"; 
+$sql2 = "SELECT count(distinct university_name) as total_uni from teacher"; 
 $result2 = $conn->query($sql2);
 $row2 = $result2->fetch_assoc()['total_uni'];
 
@@ -50,7 +50,7 @@ $row3 = $result3->fetch_assoc()['total_teacher'];
                 <?php
                   if ($result->num_rows > 0) {
                   while ($row = $result->fetch_assoc()) {
-                  echo "<option value=\"" . htmlspecialchars($row['name']) . "\">" . htmlspecialchars($row['name']) . "</option>";
+                  echo "<option value=\"" . htmlspecialchars($row['university_name']) . "\">" . htmlspecialchars($row['university_name']) . "</option>";
                   }
                  }
                 ?>

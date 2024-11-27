@@ -75,13 +75,14 @@ header h1 {
 .button-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Space between button groups */
+    gap: 30px; /* Updated for increased gap between buttons */
 }
 
 /* Management Part */
 .management-part {
     flex: 1 1 250px; /* Each management part takes a minimum of 250px */
     margin-bottom: 20px;
+    gap: 20px;
 }
 
 .management-part h3 {

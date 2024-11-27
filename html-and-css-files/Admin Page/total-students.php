@@ -42,7 +42,7 @@ if($uni === "North South")
             <h3><?php echo htmlspecialchars($uni); ?></h3>
         </header>
         
-        <form action = "/project/html-and-css-files/updated-profile-page/student-update.php" method = "POST">
+        <form action = "/project/html-and-css-files/updated-profile-page/student-update.php?" method = "POST">
             <div class="total-count">
                 <p>Total Students:<?php echo htmlspecialchars($total_students); ?> </p>
             </div>

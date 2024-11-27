@@ -63,8 +63,7 @@ if (isset($_GET['id'])) {
             <?php
             if ($result3->num_rows > 0) {
                 while ($row3 = $result3->fetch_assoc()) {
-                    echo "<div class='comment'><strong>Student ID:</strong> " . htmlspecialchars($row3['s_id']) . "<br>";
-                    echo "<strong>Teacher ID:</strong> " . htmlspecialchars($row3['t_id']) . "<br>";
+                    echo "<div class='comment'><strong>Teacher ID:</strong> " . htmlspecialchars($row3['t_id']) . "<br>";
                     echo "<strong>About Course:</strong> " . htmlspecialchars($row3['course_name']) . "<br>";
                     echo "<strong>Review:</strong> " . htmlspecialchars($row3['comment']) . "</div><br>";
                 }

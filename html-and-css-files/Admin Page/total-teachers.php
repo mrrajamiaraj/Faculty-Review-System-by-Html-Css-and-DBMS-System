@@ -25,7 +25,7 @@ if (isset($_GET['id'])){
  $total_teachers = $result_count->fetch_assoc()['total_teachers'];
 
   // Fetch all teachers
- $sql_teachers = "SELECT id, name, dept FROM teacher where university_name = '$row'";
+ $sql_teachers = "SELECT id, name, dept, initial FROM teacher where university_name = '$row'";
  $result_teachers = $conn->query($sql_teachers);
  
  ?>
@@ -44,13 +44,13 @@ if (isset($_GET['id'])){
             <h1>Teacher Database</h1>
         </header>
 
-        <form action = "/project/html-and-css-files/updated-profile-page/teacher-update.php" method = "POST">
+        <form action = "/project/html-and-css-files/updated-profile-page/teacher-update.php?student_id= 10003" method = "POST">
             <div class="total-count">
                 <p>Total Teachers:<?php echo htmlspecialchars($total_teachers); ?> </p>
             </div>
              
             <div class="search">
-                <input type="number" id="id" name="id" placeholder="Enter Teacher ID" required>
+                <input type="text" id="id" name="t_id" placeholder="Enter Teacher ID/ INITIAL" required>
                 <input type="hidden" id="st_id" name="st_id" value="<?php echo $st_id; ?>">
                 <button type="submit" class="button">Search</button>
             </div>
@@ -60,9 +60,12 @@ if (isset($_GET['id'])){
                  if ($result_teachers->num_rows > 0) {
                       while ($row = $result_teachers->fetch_assoc()) {
 
-                          echo "<div class='comment'><strong>Teacher ID:</strong> " . htmlspecialchars($row['id']) . "<br>";
+                        echo "<a href='/project/html-and-css-files/updated-profile-page/teacher-update.php?student_id=10003&st_id=" . $st_id . "&t_id=" . $row['id'] . "' style='text-decoration: none; color: inherit;'>"; // Start the link
+                          echo "<div class='comment' style='cursor: pointer;'><strong>Teacher ID:</strong> " . htmlspecialchars($row['id']) . "<br>";
                           echo "<strong>Teacher Name:</strong> " . htmlspecialchars($row['name']) . "<br>";
+                          echo "<strong>Initial:</strong> " . htmlspecialchars($row['initial']) . "<br>";
                           echo "<strong>Department:</strong> " . htmlspecialchars($row['dept']) . "</div>";
+                          echo "</a>";
                         }
                     } else {
                          echo "<pc class = 'comment'>No faculty found for this Database.</p>";
@@ -86,7 +89,7 @@ else{
  $total_teachers = $result_count->fetch_assoc()['total_teachers'];
 
  // Fetch all teachers
- $sql_teachers = "SELECT id, name, dept FROM teacher where university_name = '$uni'";
+ $sql_teachers = "SELECT id, name, dept, initial FROM teacher where university_name = '$uni'";
  $result_teachers = $conn->query($sql_teachers);
 
  ?>
@@ -106,13 +109,13 @@ else{
             <h3><?php echo htmlspecialchars($uni); ?></h3>
         </header>
 
-        <form action = "/project/html-and-css-files/updated-profile-page/teacher-update.php" method = "POST">
+        <form action = "/project/html-and-css-files/updated-profile-page/teacher-update.php?teacher_id= 10002" method = "POST">
             <div class="total-count">
                 <p>Total Teachers:<?php echo htmlspecialchars($total_teachers); ?> </p>
             </div>
              
             <div class="search">
-                <input type="number" id="s_id" name="s_id" placeholder="Enter Student ID" required>
+                <input type="text" id="s_id" name="s_id" placeholder="Enter Teacher ID/INITIAL" required>
                 <button type="submit" class="button">Search</button>
             </div>
 
@@ -121,9 +124,13 @@ else{
                  if ($result_teachers->num_rows > 0) {
                       while ($row = $result_teachers->fetch_assoc()) {
 
-                          echo "<div class='comment'><strong>Teacher ID:</strong> " . htmlspecialchars($row['id']) . "<br>";
+                          echo "<a href='/project/html-and-css-files/updated-profile-page/teacher-update.php?teacher_id= 10002&t_id={$row['id']}' style='text-decoration: none; color: inherit;'>"; // Start the link
+                          echo "<div class='comment' style='cursor: pointer;'><strong>Teacher ID:</strong> " . htmlspecialchars($row['id']) . "<br>";
                           echo "<strong>Teacher Name:</strong> " . htmlspecialchars($row['name']) . "<br>";
+                          echo "<strong>Initial:</strong> " . htmlspecialchars($row['initial']) . "<br>";
                           echo "<strong>Department:</strong> " . htmlspecialchars($row['dept']) . "</div>";
+                          echo "</a>";
+                        
                         }
                     } else {
                          echo "<pc class = 'comment'>No faculty found for this University.</p>";
