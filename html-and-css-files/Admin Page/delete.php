@@ -22,10 +22,10 @@ $sql = "DELETE from students
 
 if($conn->query($sql))
 {
-    echo "<script>alert('Successfully Deleted'); window.location.href = 'delete-teacher.php';</script>";
+    echo "<script>alert('Successfully Deleted'); window.location.href = 'delete-student.php';</script>";
 }
 else{
-    echo "<script>alert('Student Not Deleted!!'); window.location.href = 'delete-teacher.php';</script>";
+    echo "<script>alert('Student Not Deleted!!'); window.location.href = 'delete-student.php';</script>";
 }
 }
 else if(isset($_POST['t_id']))

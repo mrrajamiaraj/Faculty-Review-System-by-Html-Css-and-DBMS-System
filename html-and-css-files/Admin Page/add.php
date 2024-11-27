@@ -31,7 +31,7 @@ if ($chk_result->num_rows > 0) { // Corrected to use 'num_rows'
             VALUES ('$id', '$name', '$dept', '$versity', '$initial')";
 
     if ($conn->query($sql)) {
-        echo "<script>alert('New Faculty Added Successfully'); window.location.href = 'add-teacher.php';</script>";
+        echo "<script>alert('New Faculty Added Successfully'); window.location.href = 'admin-page.html';</script>";
     } else {
         echo "<script>alert('Error adding faculty! Please try again.'); window.location.href = 'add-teacher.php';</script>";
     }

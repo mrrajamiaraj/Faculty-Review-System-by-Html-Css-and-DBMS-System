@@ -94,13 +94,14 @@ label {
 
 input,
 select {
-    width: 80%;
-    height: 40px;
+    width: 250px; /* Adjusted from 80% for wider inputs */
+    height: 50px; /* Increased height */
     background: #e0dede;
     justify-content: center;
     display: flex;
     margin: 10px auto;
-    padding: 10px;
+    padding: 12px; /* Slightly increased padding */
+    font-size: 1.1em; /* Increased font size */
     border: none;
     outline: none;
     border-radius: 5px;
@@ -148,9 +149,9 @@ button:hover {
             <form action="add.php" method="POST">
                 <input type="text" name="name" placeholder="Name" required>
                 <!-- Course Selection Dropdown -->
-                <label for="versity" class="dropdown-label">Select University</label>
+                <label for="versity" class="dropdown-label"></label>
                 <select name="versity" id="versity" required>
-                <option value="">-- Select an option --</option> <!-- Default placeholder -->
+                <option value="">Select University</option> <!-- Default placeholder -->
                 <?php
                   if ($result->num_rows > 0) {
                   while ($row = $result->fetch_assoc()) {
