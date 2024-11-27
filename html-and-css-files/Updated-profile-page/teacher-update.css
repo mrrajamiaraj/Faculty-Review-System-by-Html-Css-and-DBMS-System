@@ -1,44 +1,43 @@
-
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+ }
 
-body {
+ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); /* Theme background */
     color: #333;
     padding: 20px;
-}
+ }
 
-.professor-profile {
+ .professor-profile {
     text-align: center;
     margin-bottom: 30px;
-}
+ }
 
-.profile-picture {
+ .profile-picture {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
     border: 2px solid #007bff;
-}
+ }
 
-.professor-profile h2 {
+ .professor-profile h2 {
     font-size: 1.5rem;
-    color: #333;
+    color: white;
     margin-bottom: 5px;
-}
+ }
 
-.professor-profile p {
+ .professor-profile p {
     font-size: 1rem;
-    color: #666;
+    color: white;
     margin-bottom: 5px;
-}
+ }
 
-.update-button {
+ .update-button {
     background-color: #ff9800;
     color: white;
     border: none;
@@ -46,111 +45,116 @@ body {
     padding: 10px 15px;
     font-size: 14px;
     cursor: pointer;
-}
+ }
 
-.update-button:hover {
+ .update-button:hover {
     background-color: #e68900;
-}
-.container {
+ }
+ .container {
     max-width: 1200px;
     margin: auto;
     background: #fff;
+    display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+ }
 
 
-.rating-overview {
+ .rating-overview {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 30px;
-}
+ }
 
-.rating-score {
+ .rating-score {
     flex: 1;
     min-width: 300px;
-}
+ }
 
-.rating-score h1 {
+ .rating-score h1 {
     font-size: 4rem;
     margin-bottom: 10px;
     color: #000;
-}
+ }
 
-.rating-score span {
+ .rating-score span {
     font-size: 1.5rem;
     color: #666;
-}
+ }
 
-.rating-score h2 {
+ .rating-score h2 {
     font-size: 2rem;
     margin: 10px 0;
     color: #333;
-}
+ }
 
-.rating-score a {
+ .rating-score a {
     color: #0066cc;
     text-decoration: none;
-}
+ }
 
-.rating-score a:hover {
+ .rating-score a:hover {
     text-decoration: underline;
-}
+ }
 
-.rating-details {
+ .rating-details {
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
-}
+ }
 
-.detail h3 {
+ .detail h3 {
     font-size: 2rem;
     margin-bottom: 5px;
     color: #000;
-}
+ }
 
-.detail p {
+ .detail p {
     font-size: 0.9rem;
     color: #666;
-}
+ }
 
-.actions {
+ .actions {
     display: flex;
     gap: 10px;
     margin-top: 20px;
-}
+ }
 
-button {
+ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-}
+ }
 
-.rate-button {
+ .rate-button {
     background-color: #007bff;
     color: #fff;
-}
+    width: 150px;
+    height:40px;
+    right: 30px;
+ }
 
-.rate-button:hover {
+ .rate-button:hover {
     background-color: #0056b3;
-}
+ }
 
-.compare-button {
+ .compare-button {
     background-color: transparent;
     color: #007bff;
     border: 2px solid #007bff;
-}
+ }
 
-.compare-button:hover {
+ .compare-button:hover {
     background-color: #007bff;
     color: #fff;
-}
+ }
 
-.rating-distribution {
+ .rating-distribution {
     flex: 1;
     min-width: 250px; /* Slightly smaller width */
     max-width: 400px; /* Prevent it from growing too large */
@@ -161,109 +165,72 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     height: 200px; /* Adjust based on content */
     margin: 0 auto; /* Center it within the parent container */
-}
+ }
 
 
 
-.rating-distribution h3 {
+ .rating-distribution h3 {
     text-align: center; /* Center-align the heading */
     font-size: 1.5rem;
     margin-bottom: 20px;
-}
+ }
 
-.rating-distribution ul {
+ .rating-distribution ul {
     list-style: none;
     padding: 0;
-}
+ }
 
-.rating-distribution li {
+ .rating-distribution li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-}
+ }
 
-.rating-distribution .bar {
+ .rating-distribution .bar {
     flex: 1;
     height: 10px;
     margin: 0 10px;
     background-color: #007bff;
     border-radius: 5px;
-}
+ }
 
-.tags {
-    margin-bottom: 30px;
-}
-
-.tags h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.tag-list {
+ .reviews-section {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+    flex-direction: column; /* Arrange items vertically */
+    align-items: flex-end; /* Align to the right */
+    gap: 30px; /* Increase the gap between buttons */
+    margin-left: auto; /* Push to the far right */
+ }
 
-.tag-list span {
-    padding: 5px 10px;
-    background: #e0e0e0;
-    border-radius: 15px;
-    font-size: 0.9rem;
-}
-
-
-.similar-professors h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.professors-list {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.professor {
-    background: #e0f7ff;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    flex: 1;
-    min-width: 120px;
-}
-
-.professor .rating {
-    font-size: 1.5rem;
+ /* Style for both buttons */
+ .show-reviews-button, .rate-button {
+    background-color: #673ab7;
+    width: 200px; /* Increase width */
+    height: 60px; /* Increase height */
+    font-size: 18px; /* Make text larger */
     font-weight: bold;
-    color: #007bff;
-    margin-bottom: 5px;
-}
-/* Show All Reviews Button */
-.reviews-section {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.show-reviews-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
+    padding: 15px 25px; /* Default size */
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
+    transition: background-color 0.3s ease;
+ }
 
-.show-reviews-button:hover {
-    background-color: #0056b3;
-}
+ /* Hover effect */
+ .show-reviews-button:hover, .rate-button:hover {
+    background-color: #311b92;
+ }
+
+ /* Optional: Clean up anchor-wrapped buttons */
+ .reviews-section a {
+    text-decoration: none;
+ }
 
 
 
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .rating-overview {
         flex-direction: column;
     }
@@ -271,4 +238,4 @@ button {
     .rating-score, .rating-distribution {
         margin-bottom: 20px;
     }
-}
+ }

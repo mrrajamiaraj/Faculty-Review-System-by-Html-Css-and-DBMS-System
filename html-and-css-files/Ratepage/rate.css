@@ -60,13 +60,17 @@ select, .rating-box, textarea {
 
 /* Tooltip styling */
 .tooltip {
-    display: none;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Transparent */
     text-align: center;
     padding: 5px;
     font-size: 0.9em;
     color: #333;
     margin-top: 5px;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
 }
+
+
 .radio-buttons {
     display: flex;
     justify-content: space-between;

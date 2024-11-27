@@ -1,4 +1,31 @@
-* {
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "reviewcademy";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * from university";
+$result = $conn->query($sql);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Review System - Login</title>
+    <script src="login-form.js" defer></script>
+</head>
+<style>
+    
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,12 +52,8 @@ body {
     position: relative;
 }
 
-#chk {
-    display: none;
-}
 
-.sign,
-.login {
+.sign {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -49,21 +72,7 @@ body {
     transform: rotateY(0);
 }
 
-.login {
-    background: url("1.jpg") no-repeat center / cover;/* Change this to your desired color */
-    transform: translateY(100%);
-    z-index: 1;
-}
 
-#chk:checked ~ .login {
-    transform: translateY(0);
-    z-index: 2;
-}
-
-#chk:checked ~ .sign {
-    transform: translateY(-100%);
-    z-index: 1;
-}
 
 label {
     color: #fff;
@@ -129,15 +138,35 @@ button:hover {
     font-family: Arial, sans-serif;
 }
 
-.switch-button {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #573b8a;
-    margin-top: 10px;
-    transition: 0.2s ease-in-out;
-}
 
-.switch-button:hover {
-    background: #573b8a;
-    color: #fff;
-}
+
+</style>
+<body>
+    <div class="main">
+
+        <!-- Sign Up Section -->
+        <div class="sign">
+            <form action="add.php" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <!-- Course Selection Dropdown -->
+                <label for="versity" class="dropdown-label"></label>
+                <select name="versity" id="versity" required>
+                <option value="">Select University</option> <!-- Default placeholder -->
+                <?php
+                  if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                  echo "<option value=\"" . htmlspecialchars($row['name']) . "\">" . htmlspecialchars($row['name']) . "</option>";
+                  }
+                 }
+                 $conn->close();
+                ?>
+                </select>
+                <input type="text" name="id" placeholder="ID" required>
+                <input type="text" name="dept" placeholder="Department" required>
+                <input type="text" name="initial" placeholder="Initial" required>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 

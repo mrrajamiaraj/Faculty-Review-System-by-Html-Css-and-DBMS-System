@@ -1,3 +1,20 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "reviewcademy";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * from university";
+$result = $conn->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +26,30 @@
 </head>
 <body>
     <div class="main">
-        <!-- Hidden Checkbox for Toggle -->
+        <!-- Hidden Checkbox for Toggle--> 
         <input type="checkbox" id="chk" aria-hidden="true">
 
         <!-- Sign Up Section -->
         <div class="sign">
-            <form action="login.php" method="POST" onsubmit="return validatePassword()">
+            <form action="login.php" method="POST">
                 <input type="hidden" name="signup" value="1">
                 <label for="chk" aria-hidden="true">Sign Up</label>
                 <input type="text" name="username" placeholder="Name" required>
+                <!-- Course Selection Dropdown -->
+                <!--<label for="versity" class="dropdown-label">Select University</label> -->
+                <select name="versity" id="versity" required>
+                <option value="">Select University</option> <!-- Default placeholder -->
+                <?php
+                  if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                  echo "<option value=\"" . htmlspecialchars($row['name']) . "\">" . htmlspecialchars($row['name']) . "</option>";
+                  }
+                 }
+                ?>
+                </select>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="text" name="id" placeholder="ID" required>
                 <input type="text" name="department" placeholder="Department" required>
-                <input type="text" name="cgpa" placeholder="CGPA" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
                 <p id="message" style="color: red; display: none;">Passwords do not match</p>
@@ -45,4 +73,4 @@
         </div>
     </div>
 </body>
-</html>
+</html> 

@@ -15,11 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['signup'])) {
         $id = $_POST['id'];
         $username = $_POST['username'];
+        $versity = $_POST['versity'];
         $email = $_POST['email'];
         $department = $_POST['department'];
-        $cgpa = $_POST['cgpa'];
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirmPassword'];
+        $type = "student";
 
         // Password Validation
         if ($password !== $confirmPassword) {
@@ -27,18 +28,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        // Insert Data
-        $query = "INSERT INTO students (id, name, email, department, cgpa, password) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("isssds", $id, $username, $email, $department, $cgpa, $password); // Skip hashing if needed
+        $sql_chk = "SELECT id, university_name FROM students where id = '$id' AND university_name ='$versity'";
+        $chk_result = $conn->query($sql_chk);
 
-        if ($stmt->execute()) {
-            echo "<script>alert('Sign-Up Successful!'); window.location.href = 'login-form.html';</script>";
-        } else {
-            echo "<script>alert('Error: " . $stmt->error . "'); window.history.back();</script>";
+        if($chk_result-> num_rows > 0 )
+        {
+            echo "<script>alert('This Id Already Exist In This University!!!'); window.location.href = 'login-form.php';</script>";
+        }
+        else
+        {
+            $sql_check2 = "SELECT email FROM students WHERE email = '$email'";
+            $chk_reult2 = $conn->query($sql_check2);
+
+            if($chk_reult2 -> num_rows > 0)
+            {
+                echo "<script>alert('This email has already been used!!! Try new one'); window.location.href = 'login-form.php';</script>";
+            }
+            else
+            {
+                $query = "INSERT INTO students (id, name, email, department, password, type, university_name) VALUES ('$id','$username', '$email', '$department', '$password', '$type', '$versity')";
+
+                if ($conn->query($query)) {
+                  echo "<script>alert('Sign-Up Successful!'); window.location.href = 'login-form.php';</script>";
+                } else {
+                   echo "<script>alert('Error: " . $stmt->error . "'); window.history.back();</script>";
+                }
+            }
+
         }
 
-        $stmt->close();
+        // Insert Data
     }
 
     // Handle Login
@@ -46,20 +65,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $query = "SELECT password FROM students WHERE email = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $stmt->bind_result($dbPassword);
-        $stmt->fetch();
+        $query = "SELECT * FROM students WHERE email = '$email'";
+        $result = $conn->query($query);
 
-        if ($dbPassword === $password) { // Check password directly if no hashing
-            echo "<script>alert('Login Successful!'); window.location.href = '/project/html-and-css-files/updated-profile-page/student-update.html';</script>";
-        } else {
-            echo "<script>alert('Invalid Email or Password'); window.history.back();</script>";
+        if($result->num_rows > 0)
+        {
+            $row = $result->fetch_assoc();
+
+            if($row['type'] === "student"){
+                if ($row['password'] === $password) { // Check password directly if no hashing
+                    echo "<script>alert('Welcome {$row['name']}');</script>";
+                    header("Location: /project/html-and-css-files/Updated-profile-page/student-update.php?id={$row['id']}");
+                    exit();
+                } else {
+                    echo "<script>alert('Invalid Password'); window.history.back();</script>";
+                }
+            }
+            else if($row['type'] === "admin"){
+                if ($row['password'] === $password) { // Check password directly if no hashing
+                    echo "<script>alert('Welcome {$row['name']}');</script>";
+                    header("Location: /project/html-and-css-files/Admin%20page/admin-page.html");
+                    exit();
+                } else {
+                    echo "<script>alert('Invalid Password'); window.history.back();</script>";
+                }
+            }
+
+            
+        }
+        else
+        {
+            echo "<script>alert('Invalid ID'); window.history.back();</script>";
         }
 
-        $stmt->close();
     }
 }
 
