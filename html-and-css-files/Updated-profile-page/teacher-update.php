@@ -124,15 +124,13 @@ if (isset($_GET['guest_id'])){
      }
     </script>
 <script>
-    function reportReview(reviewId) {
-        // This is a placeholder function to demonstrate the behavior of the "Report" button
-        // You can add custom logic here, such as making an AJAX request to report the review.
-
-        if (confirm("Are you sure you want to report this review?")) {
-            // You can use AJAX here to send the review ID to the server
-            alert("Review " + reviewId + " has been reported.");
-        }
+ function reportReview(reviewId) {
+    console.log("Report button clicked for review ID: " + reviewId); // Debugging line
+    if (confirm("Are you sure you want to report this review?")) {
+        alert("Review " + reviewId + " has been reported.");
     }
+}
+
 </script>
  </body>
  </html>
