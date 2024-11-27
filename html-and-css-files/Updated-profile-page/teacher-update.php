@@ -95,6 +95,7 @@ if (isset($_GET['guest_id'])){
     
  <div class="reviews-section">
     <button class="show-reviews-button" onclick = "showReviews()" >Show All Reviews</button>
+    <button class="back" onclick="window.location.href='/project/html-and-css-files/admin Page/admin-page.html'" >Back to Teacher</button>
  </div>
 
  <div id ="review-section2" class="reviews" style="display: none;">
@@ -139,9 +140,6 @@ else if (isset($_GET['student_id']))
         $id = $_POST['t_id'];
         $st_id = $_POST['st_id'];
     }
-    
-    echo "st id '$st_id' ";
-    echo "st id '$id' ";
     
   
 
@@ -220,6 +218,8 @@ else if (isset($_GET['student_id']))
  <div class="reviews-section">
     <button class="show-reviews-button" onclick = "showReviews()" >Show All Reviews</button>
     <?php echo "<button class='rate-button' onclick=\"window.location.href='/project/html-and-css-files/Ratepage/rate.php?tc_id={$row1['id']}&st_id=$st_id'\"> Rate-></button>"; ?>
+    <?php echo "<button class='back' onclick=\"window.location.href='/project/html-and-css-files/updated-profile-page/student-update.php?id=$st_id'\">Back to Profile</button>";?>
+
  </div>
 
  <div id ="review-section2" class="reviews" style="display: none;">
@@ -249,7 +249,7 @@ else if (isset($_GET['student_id']))
 
  </body>
  </html>
- <?php
+  <?php
 }
 
 else if (isset($_GET['teacher_id'])){
@@ -338,6 +338,7 @@ else if (isset($_GET['teacher_id'])){
     
  <div class="reviews-section">
     <button class="show-reviews-button" onclick = "showReviews()" >Show All Reviews</button>
+    <button class="back" onclick="window.location.href='/project/html-and-css-files/admin Page/admin-page.html'" >Back to Admin</button>
  </div>
 
  <div id ="review-section2" class="reviews" style="display: none;">
