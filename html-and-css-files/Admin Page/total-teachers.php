@@ -50,7 +50,7 @@ if (isset($_GET['id'])){
             </div>
              
             <div class="search">
-                <input type="text" id="id" name="t_id" placeholder="Enter Teacher ID/ INITIAL" required>
+                <input type="text" id="id" name="t_id" placeholder="Enter Intial" required>
                 <input type="hidden" id="st_id" name="st_id" value="<?php echo $st_id; ?>">
                 <button type="submit" class="button">Search</button>
             </div>
@@ -115,7 +115,7 @@ else{
             </div>
              
             <div class="search">
-                <input type="text" id="s_id" name="s_id" placeholder="Enter Teacher ID/INITIAL" required>
+                <input type="text" id="s_id" name="s_id" placeholder="Enter Intial" required>
                 <button type="submit" class="button">Search</button>
             </div>
 

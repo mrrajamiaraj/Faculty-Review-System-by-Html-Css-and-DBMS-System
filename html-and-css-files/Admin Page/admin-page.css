@@ -91,6 +91,15 @@ header h1 {
     font-size: 20px;
 }
 
+.management-part a {
+    display: block; /* Ensures each button occupies its line */
+    margin-bottom: 10px; /* Adds space between buttons */
+}
+
+.management-part a:last-child {
+    margin-bottom: 0; /* Removes margin after the last button */
+}
+
 /* Button Styling */
 button {
     width: 100%;
