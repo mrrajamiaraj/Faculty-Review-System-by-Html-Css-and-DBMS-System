@@ -1,145 +1,144 @@
 
-   body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #094db4, #7fabdd);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-  }
-
-  .review-container {
-     width: 90%;
-     max-width: 800px;
-     background-color: #e3edef;
-     border-radius: 10px;
-     padding: 20px;
-     text-align: center;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- }
-
- .header {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #094db4, #7fabdd);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
- }
+    height: 100vh;
+}
 
- .header-text {
-    font-size: 24px;
-    color: rgb(10, 11, 27);
- }
+.review-container {
+   width: 90%;
+   max-width: 800px;
+   background-color: #e3edef;
+   border-radius: 10px;
+   padding: 20px;
+   text-align: center;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-text {
+  font-size: 24px;
+  color: rgb(10, 11, 27);
+}
 
 .review-button{
-    background-color: indigo;
-    color: white;
-    width: 160px;
-    height: 50px;
-    right: 50px;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-size: 14px;
-    cursor: pointer;
- }
- .review-button:hover{
-    background-color: #9a1d0c;
- }
+  background-color: indigo;
+  color: white;
+  width: 160px;
+  height: 50px;
+  right: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.review-button:hover{
+  background-color: #9a1d0c;
+}
 
- .update-button {
-    background-color: #ff3c00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-size: 14px;
-    cursor: pointer;
- }
+.update-button {
+  background-color: #ff3c00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
 
- .update-button:hover {
-    background-color: #9a1d0c;
- }
+.update-button:hover {
+  background-color: #9a1d0c;
+}
 
- .user-info {
-    display: flex;
-    justify-content: space-between;
-    background-color: #08213b;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 16px;
- }
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  background-color: #08213b;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
 
- .profile-card {
-    background-color: #d9dcdf;
-    border: 2px solid #0288d1;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 16px;
-    color: rgb(0, 0, 0);
-    text-align: center;
- }
+.profile-card {
+  background-color: #d9dcdf;
+  border: 2px solid #0288d1;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
 
- .profile-picture {
-    width: 120px;
-    height: 120px;
-    border: 2px solid #0288d1;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    object-fit: cover;
-    display: block;
- }
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #0288d1;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  object-fit: cover;
+  display: block;
+}
 
- .show-reviews {
-    width: 40%;
-    padding: 10px;
-    margin-top: 20px;
-    left: 50%;
-    background-color: #0251d1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
- }
+.show-reviews {
+  width: 40%;
+  padding: 10px;
+  margin-top: 20px;
+  left: 50%;
+  background-color: #0251d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
 
- .show-reviews:hover {
-    background-color: #026798;
- }
- 
- .back{
-    width: 40%;
-    padding: 10px;
-    margin-top: 20px;
-    right: 50%;
-    background-color: #0251d1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
- }
+.show-reviews:hover {
+  background-color: #026798;
+}
 
- .back:hover{
-    background-color: #026798;
- }
+.back{
+  width: 40%;
+  padding: 10px;
+  margin-top: 20px;
+  right: 50%;
+  background-color: #0251d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
 
- .home{
-    width: 40%;
-    padding: 10px;
-    margin-top: 20px;
-    right: 50%;
-    background-color: #0251d1;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
- }
- .home:hover{
-    background-color: #026798;
- }
- 
+.back:hover{
+  background-color: #026798;
+}
+
+.home{
+  width: 40%;
+  padding: 10px;
+  margin-top: 20px;
+  right: 50%;
+  background-color: #0251d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.home:hover{
+  background-color: #026798;
+}

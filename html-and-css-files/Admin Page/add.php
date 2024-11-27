@@ -40,9 +40,3 @@ if ($chk_result->num_rows > 0) { // Corrected to use 'num_rows'
 // Close connection
 $conn->close();
 ?>
-
-
-
-
-$conn->close();
-?>
