@@ -44,8 +44,9 @@ if ($count > 0) {
 } else {
     echo "<script>
         alert('No values were updated.');
-        window.location.href = 'student-information.php';
+        window.location.href = '/project/html-and-css-files/updated-profile-page/student-update.php?id=$old_id';
     </script>";
+
 }
 
 $conn->close();
