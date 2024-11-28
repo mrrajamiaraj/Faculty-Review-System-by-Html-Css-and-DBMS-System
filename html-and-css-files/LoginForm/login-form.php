@@ -35,8 +35,6 @@ $result = $conn->query($sql);
                 <input type="hidden" name="signup" value="1">
                 <label for="chk" aria-hidden="true">Sign Up</label>
                 <input type="text" name="username" placeholder="Name" required>
-                <!-- Course Selection Dropdown -->
-                <!--<label for="versity" class="dropdown-label">Select University</label> -->
                 <select name="versity" id="versity" required>
                 <option value="">Select University</option> <!-- Default placeholder -->
                 <?php

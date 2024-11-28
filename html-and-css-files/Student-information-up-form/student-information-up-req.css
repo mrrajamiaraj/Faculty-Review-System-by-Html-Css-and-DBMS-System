@@ -119,6 +119,47 @@ form h3 {
     transform: scale(1.1);
 }
 
+/* Dropdown styling */
+.update-options select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    background: #4dd0e1;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.update-options select:focus {
+    outline: none;
+    background: #0288d1;
+    color: white;
+}
+
+.update-options option {
+    padding: 10px;
+    background: white;
+    color: #333;
+}
+
+/* Adjust dropdown container */
+.update-options div select {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Make dropdown responsive */
+@media (max-width: 768px) {
+    .update-options select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+
 @media (max-width: 768px) {
     .update-options div {
         flex: 1 1 100%;

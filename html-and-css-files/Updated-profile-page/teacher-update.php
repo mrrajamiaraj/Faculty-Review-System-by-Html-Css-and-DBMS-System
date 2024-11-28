@@ -95,7 +95,7 @@ if (isset($_GET['guest_id'])){
     
  <div class="reviews-section">
     <button class="show-reviews-button" onclick = "showReviews()" >Show All Reviews</button>
-    <button class="back" onclick="window.location.href='/project/html-and-css-files/admin Page/admin-page.html'" >Back to Teacher</button>
+    <button class="back" onclick="window.location.href='/project/html-and-css-files/admin%20Page/guest.php'" >Back</button>
  </div>
 
  <div id ="review-section2" class="reviews" style="display: none;">
@@ -103,12 +103,16 @@ if (isset($_GET['guest_id'])){
         <?php
         if ($result3->num_rows > 0) {
             while ($row3 = $result3->fetch_assoc()) {
-                echo "<div class='comment'><strong>Student ID:</strong> " . htmlspecialchars($row3['s_id']) . "<br>";
+                echo "<div class='review-box'>";
+                echo "<div class='details-left'>";
+                echo "<strong>Student ID:</strong> " . htmlspecialchars($row3['s_id']) . "<br>";
                 echo "<strong>About Course:</strong> " . htmlspecialchars($row3['course_name']) . "<br>";
-                echo "<strong>Review:</strong> " . htmlspecialchars($row3['comment']) . "</div><br>";
+                echo "<strong>Review:</strong> " . htmlspecialchars($row3['comment']) . "<br>";
+                echo "</div>";
+                echo "</div>";
             }
         } else {
-            echo "<p>No reviews found for this student.</p>";
+            echo "<p>No reviews found for this Teacher.</p>";
         }
         $conn->close();
         ?>
@@ -222,21 +226,31 @@ else if (isset($_GET['student_id']))
 
  </div>
 
- <div id ="review-section2" class="reviews" style="display: none;">
-        <h3>All Reviews</h3>
-        <?php
-        if ($result3->num_rows > 0) {
-            while ($row3 = $result3->fetch_assoc()) {
-                echo "<div class='comment'><strong>Student ID:</strong> " . htmlspecialchars($row3['s_id']) . "<br>";
-                echo "<strong>About Course:</strong> " . htmlspecialchars($row3['course_name']) . "<br>";
-                echo "<strong>Review:</strong> " . htmlspecialchars($row3['comment']) . "</div><br>";
-            }
-        } else {
-            echo "<p>No reviews found for this student.</p>";
+ <div id="review-section2" class="reviews" style="display: none;">
+    <h3>All Reviews</h3>
+    <?php
+    // Example of fetching reviews (make sure $result3 is set with the appropriate data from the database)
+    if ($result3->num_rows > 0) {
+        while ($row3 = $result3->fetch_assoc()) {
+            echo "<div class='review-box'>";
+            echo "<div class='details-left'>";
+            echo "<strong>Student ID:</strong> " . htmlspecialchars($row3['s_id']) . "<br>";
+            echo "<strong>About Course:</strong> " . htmlspecialchars($row3['course_name']) . "<br>";
+            echo "<strong>Review:</strong> " . htmlspecialchars($row3['comment']) . "<br>";
+            echo "</div>";
+            // Report Button
+            echo "<div class='details-right'>";
+            echo "<a href='report.php?id=" . htmlspecialchars($row3['id']) . "&st_id=$st_id'> <button class='report-button'>Report</button> </a>";
+            echo "</div>";
+            echo "</div>";
         }
-        $conn->close();
-        ?>
-    </div>
+    } else {
+        echo "<p>No reviews found for this Teacher.</p>";
+    }
+    $conn->close();
+    ?>
+</div>
+
 
 
     <script>
@@ -318,7 +332,10 @@ else if (isset($_GET['teacher_id'])){
                     }
                       ?></p>
     <p><?php echo htmlspecialchars($row1['university_name']) ?></p>
-    <button class="update-button">Update Info</button>
+    <?php 
+     echo "<button class='update-button' onclick=\"window.location.href='/project/html-and-css-files/Student-information-up-form/teacher-info.php?id={$row1['id']}'\">Update</button>";  ?>
+
+    
     </div>
 
     <div class="container">
@@ -341,21 +358,26 @@ else if (isset($_GET['teacher_id'])){
     <button class="back" onclick="window.location.href='/project/html-and-css-files/admin Page/admin-page.html'" >Back to Admin</button>
  </div>
 
- <div id ="review-section2" class="reviews" style="display: none;">
-        <h3>All Reviews</h3>
-        <?php
-        if ($result3->num_rows > 0) {
-            while ($row3 = $result3->fetch_assoc()) {
-                echo "<div class='comment'><strong>Student ID:</strong> " . htmlspecialchars($row3['s_id']) . "<br>";
-                echo "<strong>About Course:</strong> " . htmlspecialchars($row3['course_name']) . "<br>";
-                echo "<strong>Review:</strong> " . htmlspecialchars($row3['comment']) . "</div><br>";
-            }
-        } else {
-            echo "<p>No reviews found for this student.</p>";
+    <div id="review-section2" class="reviews" style="display: none;">
+    <h3>All Reviews</h3>
+    <?php
+    // Example of fetching reviews (make sure $result3 is set with the appropriate data from the database)
+    if ($result3->num_rows > 0) {
+        while ($row3 = $result3->fetch_assoc()) {
+            echo "<div class='review-box'>";
+            echo "<div class='details-left'>";
+            echo "<strong>Student ID:</strong> " . htmlspecialchars($row3['s_id']) . "<br>";
+            echo "<strong>About Course:</strong> " . htmlspecialchars($row3['course_name']) . "<br>";
+            echo "<strong>Review:</strong> " . htmlspecialchars($row3['comment']) . "<br>";
+            echo "</div>";
+            echo "</div>";
         }
-        $conn->close();
-        ?>
-    </div>
+    } else {
+        echo "<p>No reviews found for this Teacher.</p>";
+    }
+    $conn->close();
+    ?>
+</div>
 
 
     <script>

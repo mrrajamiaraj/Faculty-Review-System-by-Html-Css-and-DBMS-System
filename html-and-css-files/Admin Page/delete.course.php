@@ -11,23 +11,26 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$NO_id = 0000;
-  // Fetch all teachers
-  $sql_teachers = "SELECT id, name, department FROM students where id <> '$NO_id'";
-  $result_teachers = $conn->query($sql_teachers);
 
-  $sql = "SELECT (count(id)-1) as total_students FROM students";
-  $result = $conn->query($sql);
-  $row1 = $result->fetch_assoc()['total_students'];
+$sql="SELECT * from courses";
+$result = $conn->query($sql);
 
-  ?>
+$sql1="SELECT count(*) as total_report from courses";
+$result1 = $conn->query($sql1);
+$row1= $result1->fetch_assoc()['total_report'];
 
- <!DOCTYPE html>
- <html lang="en">
- <head>
+
+
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Total Complains</title>
     <link rel="stylesheet" href="delete.css">
     <style>
         .home{
@@ -46,29 +49,28 @@ $NO_id = 0000;
     background-color: #026798;
  }
  </style>
- </head>
- <body>
- <div class="container">
+</head>
+<body>
+<div class="container">
         <header>
-            <h1>Students Database </h1>
+            <h1>Courses Database </h1>
         </header>
         
         <div class="total-count">
-                <p>Total Students:<?php echo htmlspecialchars($row1); ?> </p>
+                <p>Total Courses:<?php echo htmlspecialchars($row1); ?> </p>
             </div>
              
             
             <div class="teachers-list" id="teachers-list">
                 <?php
-                 if ($result_teachers->num_rows > 0) {
-                    while ($row = $result_teachers->fetch_assoc()) {
+                 if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
                         echo "<div class='comment'>
-                                <strong>Student ID:</strong> " . htmlspecialchars($row['id']) . "<br>
-                                <strong>Student Name:</strong> " . htmlspecialchars($row['name']) . "<br>
-                                <strong>Department:</strong> " . htmlspecialchars($row['department']) . "<br><br>
-                                <form action='delete.php' method='POST'>
-                                    <input type='hidden' name='id' value='" . htmlspecialchars($row['id']) . "'>
-                                    <button type='submit' class='button'>Delete</button>
+                                <strong>Course Code:</strong> " . htmlspecialchars($row['course_code']) . "<br>
+                                <strong>Title: </strong> " . htmlspecialchars($row['course_title']) . "<br><br>
+                                <form action='delete-c.php' method='POST'>
+                                    <input type='hidden' name='id' value='" . htmlspecialchars($row['course_code']) . "'>
+                                    <button type='submit' class='button'>Delete course</button>
                                 </form>
                               </div>";
                     }
@@ -79,9 +81,10 @@ $NO_id = 0000;
 
                  $conn->close();
                 ?>
-            </div>
+            </div> 
             <button class="home" onclick="window.location.href='admin-page.html'" >Go to Admin</button>
-        
+        </div>
+
     </div>
- </body>
- </html>
+</body>
+</html>

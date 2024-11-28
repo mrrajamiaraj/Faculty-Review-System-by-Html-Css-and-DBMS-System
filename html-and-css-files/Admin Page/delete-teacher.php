@@ -28,6 +28,24 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="delete.css">
+    <style>
+        .home{
+    width: 40%;
+    padding: 10px;
+    margin-top: 20px;
+    right: 50%;
+    background-color: #9f1934;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    
+ }
+ .home:hover{
+    background-color: #026798;
+ }
+ </style>
  </head>
  <body>
  <div class="container">
@@ -63,7 +81,8 @@ if ($conn->connect_error) {
                  $conn->close();
                 ?>
             </div>
-        
+            
+            <button class="home" onclick="window.location.href='admin-page.html'" >Go to Admin</button>
     </div>
  </body>
  </html>
