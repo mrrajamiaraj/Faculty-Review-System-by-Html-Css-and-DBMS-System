@@ -29,7 +29,7 @@ $result3 = $conn->query($sql3);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Update Request</title>
+    <title>Teacher Update Request</title>
     <link rel="stylesheet" href="student-information-up-req.css">
 </head>
 <body>

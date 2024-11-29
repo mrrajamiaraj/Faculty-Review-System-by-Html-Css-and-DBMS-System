@@ -14,17 +14,17 @@ if ($conn->connect_error) {
 
 $code = $_POST['code'];
 $title = $_POST['title'];
-$t_id = $_POST['versity']; // Correctly retrieve the teacher ID
+$t_id = $_POST['versity']; 
 
-// Correct INSERT queries
+
 $sql = "INSERT INTO courses (course_code, course_title) VALUES ('$code', '$title');";
 $sql1 = "INSERT INTO teaches (c_code, t_id) VALUES ('$code', '$t_id');";
 
-// Check if the course already exists
+
 $sql2 = "SELECT * FROM courses WHERE course_code = '$code';";
 $result2 = $conn->query($sql2);
 
-// Check if the faculty already takes the course
+
 $sql3 = "SELECT * FROM teaches WHERE c_code = '$code' AND t_id = '$t_id';";
 $result3 = $conn->query($sql3);
 

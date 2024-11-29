@@ -27,7 +27,7 @@ body {
 
 .main {
     width: 350px;
-    height: 700px; /* Adjusted height for dropdown */
+    height: 700px; 
     background: url("1.jpg") no-repeat center / cover;
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
@@ -77,14 +77,14 @@ label {
 
 input,
 select {
-    width: 250px; /* Adjusted from 80% for wider inputs */
-    height: 50px; /* Increased height */
+    width: 250px; 
+    height: 50px; 
     background: #e0dede;
     justify-content: center;
     display: flex;
     margin: 10px auto;
-    padding: 12px; /* Slightly increased padding */
-    font-size: 1.1em; /* Increased font size */
+    padding: 12px; 
+    font-size: 1.1em; 
     border: none;
     outline: none;
     border-radius: 5px;

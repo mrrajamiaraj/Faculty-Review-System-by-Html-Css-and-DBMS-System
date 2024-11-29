@@ -19,14 +19,14 @@ $dept = $_POST['dept'];
 $versity = $_POST['versity'];
 $initial = $_POST['initial'];
 
-// Check if the ID already exists
+
 $sql_chk = "SELECT id FROM teacher WHERE id = '$id'";
 $chk_result = $conn->query($sql_chk);
 
-if ($chk_result->num_rows > 0) { // Corrected to use 'num_rows'
+if ($chk_result->num_rows > 0) { 
     echo "<script>alert('This ID already exists in the database!!'); window.location.href = 'add-teacher.php';</script>";
 } else {
-    // Insert the new teacher
+    
     $sql = "INSERT INTO teacher (id, name, dept, university_name, initial) 
             VALUES ('$id', '$name', '$dept', '$versity', '$initial')";
 
@@ -37,6 +37,6 @@ if ($chk_result->num_rows > 0) { // Corrected to use 'num_rows'
     }
 }
 
-// Close connection
+
 $conn->close();
 ?>
